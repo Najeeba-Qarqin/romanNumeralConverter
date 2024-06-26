@@ -26,13 +26,13 @@ number.addEventListener('keydown', e => {
 })
 
 button.addEventListener('click', () => {
-  if(number.value == '' ) {
+  if (number.value == '') {
     result.innerHTML = 'Please enter a valid number'
-  }else if (number.value < 0) {
+  } else if (number.value < 0) {
     result.innerHTML = 'Please enter a number greater than or equal to 1'
-  }else if(number.value > 3999) {
+  } else if (number.value > 3999) {
     result.innerHTML = 'Please enter a number less than or equal to 3999'
-  }else {
+  } else {
     let output = '';
     for (const [roman, Number] of numeral) {
       while (number.value >= Number) {
