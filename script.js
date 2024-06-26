@@ -28,5 +28,7 @@ number.addEventListener('keydown', e => {
 button.addEventListener('click', () => {
   if(number.value == '' ) {
     result.innerHTML = 'Please enter a valid number'
+  }else if (number.value < 0) {
+    result.innerHTML = 'Please enter a number greater than or equal to 1'
   }
 });
