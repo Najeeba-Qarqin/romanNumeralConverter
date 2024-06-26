@@ -24,3 +24,9 @@ number.addEventListener('keydown', e => {
     button.click()
   }
 })
+
+button.addEventListener('click', () => {
+  if(number.value == '' ) {
+    result.innerHTML = 'Please enter a valid number'
+  }
+});
