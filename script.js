@@ -18,3 +18,9 @@ const numeral = [
   ['IV', 4],
   ['I', 1]
 ];
+
+number.addEventListener('keydown', e => {
+  if (e.key === "Enter") {
+    button.click()
+  }
+})
