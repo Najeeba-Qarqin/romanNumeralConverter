@@ -1,7 +1,6 @@
 const number = document.querySelector('#number');
 const button = document.querySelector('#convert-btn');
 const result = document.querySelector('#output');
-const {value} = number.value;
 
 const numeral = [
   ['M', 1000],
@@ -34,7 +33,7 @@ button.addEventListener('click', () => {
     result.innerHTML = 'Please enter a number less than or equal to 3999';
   } else {
     let output = '';
-    for (const [roman, Number] of Object.numeral) {
+    for (const [roman, Number] of Object.values(numeral)) {
       while (number.value >= Number) {
         output += roman;
         number.value -= Number;
