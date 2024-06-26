@@ -70,3 +70,31 @@ header {
   font-size: 16px;
   text-shadow: 1px 10px 15px black;
 }
+
+@media (min-width: 700px) {
+  header {
+    font-size: 13px;
+  }
+
+  label {
+    font-size: 17px;
+  }
+
+  .container {
+    width: 45vw;
+  }
+
+  #number {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  #convert-btn {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  #output {
+    font-size: 22px;
+  }
+}
