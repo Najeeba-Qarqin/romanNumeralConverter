@@ -1,7 +1,7 @@
 const number = document.querySelector('#number');
 const button = document.querySelector('#convert-btn');
 const result = document.querySelector('#output');
-let value = number.value;
+const {value} = number.value;
 
 const numeral = [
   ['M', 1000],
@@ -16,25 +16,25 @@ const numeral = [
   ['IX', 9],
   ['V', 5],
   ['IV', 4],
-  ['I', 1]
+  ['I', 1],
 ];
 
-number.addEventListener('keydown', e => {
-  if (e.key === "Enter") {
-    button.click()
+number.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    button.click();
   }
-})
+});
 
 button.addEventListener('click', () => {
-  if (number.value == '') {
-    result.innerHTML = 'Please enter a valid number'
+  if (number.value === '') {
+    result.innerHTML = 'Please enter a valid number';
   } else if (number.value < 0) {
-    result.innerHTML = 'Please enter a number greater than or equal to 1'
+    result.innerHTML = 'Please enter a number greater than or equal to 1';
   } else if (number.value > 3999) {
-    result.innerHTML = 'Please enter a number less than or equal to 3999'
+    result.innerHTML = 'Please enter a number less than or equal to 3999';
   } else {
     let output = '';
-    for (const [roman, Number] of numeral) {
+    for (const [roman, Number] of Object.numeral) {
       while (number.value >= Number) {
         output += roman;
         number.value -= Number;
