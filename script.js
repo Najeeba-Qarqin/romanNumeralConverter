@@ -42,7 +42,7 @@ button.addEventListener('click', () => {
   }
   let romanNumeral = '';
 
-  for (let i = 0; i < numeral.length; i++) {
+  for (let i = 0; i < numeral.length; i += 1) {
     while (number.value >= numeral[i][1]) {
       romanNumeral += numeral[i][0];
       number.value -= numeral[i][1];
