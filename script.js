@@ -27,18 +27,27 @@ number.addEventListener('keydown', (e) => {
 button.addEventListener('click', () => {
   if (number.value === '') {
     result.innerHTML = 'Please enter a valid number';
-  } else if (number.value < 0) {
+    number.value = '';
+    return false;
+  }
+  if (number.value < 0) {
     result.innerHTML = 'Please enter a number greater than or equal to 1';
-  } else if (number.value > 3999) {
+    number.value = '';
+    return false;
+  }
+  if (number.value > 3999) {
     result.innerHTML = 'Please enter a number less than or equal to 3999';
-  } else {
-    let output = '';
-    for (const [roman, Number] of Object.values(numeral)) {
-      while (number.value >= Number) {
-        output += roman;
-        number.value -= Number;
-      }
-      result.innerText = output;
+    number.value = '';
+    return false;
+  }
+  let romanNumeral = '';
+
+  for (let i = 0; i < numeral.length; i++) {
+    while (number.value >= numeral[i][1]) {
+      romanNumeral += numeral[i][0];
+      number.value -= numeral[i][1];
     }
   }
+  result.innerHTML = romanNumeral;
+  return true;
 });
